@@ -1,0 +1,41 @@
+# =============================================================================
+# LiteLLM Proxy Configuration
+# Central AI Gateway for all dxtechph.online apps
+# =============================================================================
+
+model_list:
+  # --- OpenRouter (primary provider via your OpenCode subscription) ---
+  - model_name: deepseek-v4-flash
+    litellm_params:
+      model: openrouter/deepseek/deepseek-v4-flash
+      api_key: os.environ/OPENROUTER_API_KEY
+      rpm: 60
+  - model_name: deepseek-v4-pro
+    litellm_params:
+      model: openrouter/deepseek/deepseek-v4-pro
+      api_key: os.environ/OPENROUTER_API_KEY
+      rpm: 30
+
+  # --- Future: add more providers here ---
+  # - model_name: gpt-4o
+  #   litellm_params:
+  #     model: openai/gpt-4o
+  #     api_key: os.environ/OPENAI_API_KEY
+  # - model_name: claude-sonnet-4
+  #   litellm_params:
+  #     model: anthropic/claude-sonnet-4-20250514
+  #     api_key: os.environ/ANTHROPIC_API_KEY
+
+litellm_settings:
+  cache: true
+  cache_params:
+    type: redis
+    host: redis
+    port: 6379
+  drop_params: true
+  set_verbose: false
+
+general_settings:
+  master_key: os.environ/LITELLM_MASTER_KEY
+  # Virtual key management = each app gets its own key
+  # Keys are created via the LiteLLM Admin UI after deployment

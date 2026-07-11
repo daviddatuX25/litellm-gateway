@@ -4,18 +4,17 @@
 # =============================================================================
 
 model_list:
-  # --- OpenCode Go (your subscription — $10/mo) ---
   - model_name: deepseek-v4-flash
     litellm_params:
       model: openai/deepseek-v4-flash
       api_base: https://opencode.ai/zen/go/v1
-      api_key: os.environ/OPENCODE_GO_API_KEY
+      api_key: sk-3kIYbthoqc3a5a2dujsLzPhjRZ0XEJa1JcWMtJ7oUU9OEst5k3WLK7cb6CZIYlyT
       rpm: 60
   - model_name: deepseek-v4-pro
     litellm_params:
       model: openai/deepseek-v4-pro
       api_base: https://opencode.ai/zen/go/v1
-      api_key: os.environ/OPENCODE_GO_API_KEY
+      api_key: sk-3kIYbthoqc3a5a2dujsLzPhjRZ0XEJa1JcWMtJ7oUU9OEst5k3WLK7cb6CZIYlyT
       rpm: 30
 
 litellm_settings:
@@ -28,6 +27,6 @@ litellm_settings:
   set_verbose: true
 
 general_settings:
-  master_key: os.environ/LITELLM_MASTER_KEY
-  ui_username: os.environ/UI_USERNAME
-  ui_password: os.environ/UI_PASSWORD
+  master_key: sk-litellm-86e66d46ac62b05368205d348e789b06b858f967e2b04545
+  ui_username: admin
+  ui_password: admin123

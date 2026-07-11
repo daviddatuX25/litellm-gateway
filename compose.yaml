@@ -6,11 +6,11 @@ services:
     volumes:
       - ./config.yaml:/app/config.yaml
     environment:
-      LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY}
-      OPENCODE_GO_API_KEY: ${OPENCODE_GO_API_KEY}
+      LITELLM_MASTER_KEY: "sk-litellm-86e66d46ac62b05368205d348e789b06b858f967e2b04545"
+      OPENCODE_GO_API_KEY: "sk-3kIYbthoqc3a5a2dujsLzPhjRZ0XEJa1JcWMtJ7oUU9OEst5k3WLK7cb6CZIYlyT"
       DATABASE_URL: "postgresql://llmproxy:litellm_db_pass_2026@db:5432/litellm"
-      UI_USERNAME: ${UI_USERNAME}
-      UI_PASSWORD: ${UI_PASSWORD}
+      UI_USERNAME: "admin"
+      UI_PASSWORD: "admin123"
     depends_on:
       db:
         condition: service_healthy

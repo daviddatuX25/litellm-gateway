@@ -6,6 +6,7 @@ services:
     volumes:
       - ./config.yaml:/app/config.yaml
     environment:
+      LITELLM_MASTER_KEY: ${LITELLM_MASTER_KEY}
       DATABASE_URL: "postgresql://llmproxy:litellm_db_pass_2026@db:5432/litellm"
       UI_USERNAME: ${UI_USERNAME}
       UI_PASSWORD: ${UI_PASSWORD}

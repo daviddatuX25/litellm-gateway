@@ -2,20 +2,8 @@
 # LiteLLM Proxy Configuration
 # Central AI Gateway for all dxtechph.online apps
 # =============================================================================
-
-model_list:
-  - model_name: deepseek-v4-flash
-    litellm_params:
-      model: openai/deepseek-v4-flash
-      api_base: https://opencode.ai/zen/go/v1
-      api_key: sk-3kIYbthoqc3a5a2dujsLzPhjRZ0XEJa1JcWMtJ7oUU9OEst5k3WLK7cb6CZIYlyT
-      rpm: 60
-  - model_name: deepseek-v4-pro
-    litellm_params:
-      model: openai/deepseek-v4-pro
-      api_base: https://opencode.ai/zen/go/v1
-      api_key: sk-3kIYbthoqc3a5a2dujsLzPhjRZ0XEJa1JcWMtJ7oUU9OEst5k3WLK7cb6CZIYlyT
-      rpm: 30
+# Model definitions: managed via Admin UI / API / MCP tools
+# (STORE_MODEL_IN_DB=True enabled — no model_list entries needed here)
 
 litellm_settings:
   cache: true
@@ -25,8 +13,7 @@ litellm_settings:
     port: 6379
   drop_params: true
   set_verbose: true
+  store_model_in_db: true
 
 general_settings:
-  master_key: sk-litellm-86e66d46ac62b05368205d348e789b06b858f967e2b04545
-  ui_username: admin
-  ui_password: admin123
+  store_model_in_db: true

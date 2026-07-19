@@ -14,6 +14,7 @@ litellm_settings:
   drop_params: true
   set_verbose: true
   store_model_in_db: true
+  merge_reasoning_content_in_choices: true  # DeepSeek v4 sends reasoning_content separately; merge into content
 
 general_settings:
   store_model_in_db: true
